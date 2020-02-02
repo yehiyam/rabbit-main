@@ -14,7 +14,7 @@ def start(args, hkubeapi):
       if (body == b'subpipeline'):
          ret = hkubeapi.start_stored_subpipeline('simple', {}, blocking=False)
       else:
-         ret = hkubeapi.start_algorithm('green-alg', [{'body':body}], resultAsRaw=True, blocking=False)
+         ret = hkubeapi.start_algorithm('tf-example', [body], resultAsRaw=True, blocking=False)
 
 
    channel.basic_consume(queue='hello', on_message_callback=callback, auto_ack=True)
