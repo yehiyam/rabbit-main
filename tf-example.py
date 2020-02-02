@@ -1,6 +1,6 @@
 import time
 import tensorflow as tf
-
+ 
 def start(args, hkubeapi):
     input_range=args.get('input')[0]
     # create a variable, refer to it as 'state' and set it to 0
