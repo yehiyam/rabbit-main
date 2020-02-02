@@ -1,5 +1,5 @@
 import time
-import tensorflow
+import tensorflow as tf
 
 def start(args, hkubeapi):
     input_range=args.get('input')[0]
@@ -16,14 +16,15 @@ def start(args, hkubeapi):
     # create a session
     with tf.Session() as sess:
     # initialize session variables
-    sess.run( tf.global_variables_initializer() )
+        sess.run( tf.global_variables_initializer() )
 
-    print ("The starting state is",sess.run(state))
+        print ("The starting state is",sess.run(state))
 
-    print ("Run the update 10 times...")
-    for count in range(input_range):
-        # execute the update
-        sess.run(update)
+        print ("Run the update 10 times...")
+        for count in range(input_range):
+            # execute the update
+            sess.run(update)
 
-    print("The end state is",sess.run(state))
-    return str(sess.run(state))
+        print("The end state is",sess.run(state))
+        return str(sess.run(state))
+
